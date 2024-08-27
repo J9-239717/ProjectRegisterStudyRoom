@@ -32,8 +32,9 @@ typedef struct List_Data {
 } List_Data;
 
 typedef enum{
-    FLAG_SUBJECT = (3 << 2),
-    FLAG_TIME = (3 << 3)
+    FLAG_SUBJECT = (1 << 2),
+    FLAG_TIME = (1 << 3),
+    FLAG_ID = (1 << 4)
 }typecompare_flag;
 
 #endif

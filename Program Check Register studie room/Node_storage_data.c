@@ -123,6 +123,17 @@ void show_one_node(const NODE_DATA *node){
     printf("----------------------\n");
 }
 
+void show_one_two_topic_by_id(const NODE_DATA *node,ID id1,ID id2){
+    const char* field_names[NUM_FIELDS] = {
+        "KI", "Tr_Vien_Kh", "MaLop", "MaLopKem", "MaHP", "Ten_HP_ENG",
+        "Khoi_luong", "Buoi_so", "Thu", "Thoi_gain", "Tuan", "Phong",
+        "Can_TN", "SL_Max", "Loai_lop", "Dot_mo", "TeachingType"
+    };
+    printf("%s: %s\n", field_names[id1], node->total_data[id1]);
+    printf("%s: %s\n", field_names[id2], node->total_data[id2]);
+    printf("----------------------\n");
+}
+
 List_Data* find(List_Data* src,const char* string_find,ID i){
     List_Data* curr = src;
     List_Data* result_head = NULL;
