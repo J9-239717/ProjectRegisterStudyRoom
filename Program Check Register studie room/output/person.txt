@@ -1,0 +1,55 @@
+//////////////////////////////////////plan_kim//////////////////////////////////////
+///// MA LOP FOR DK/////
+
+//Data Structures and Algorithms//
+154137	LT+BT
+//////////
+
+//Computer Architectures//
+153991	LT+BT
+153991	LT+BT
+//////////
+
+//Programming Techniques//
+154034	LT+BT
+744467	TN
+//////////
+
+//Database//
+154029	LT+BT
+744506	TN
+//////////
+
+//Object-Oriented Programming//
+153989	LT+BT
+//////////
+
+//Probability and Statistics//
+154809	BT
+154808	LT
+//////////
+
+//Introduction to Optimization Methods//
+153985	LT+BT
+//////////
+
+//Political Economics of Marxism and Leninism//
+156015	BT
+156014	LT
+//////////
+
+//Scientific Socialism//
+156144	BT
+156142	LT
+//////////
+
+//Physics II//
+153997	BT
+153996	LT
+//////////
+
+//Physics II//
+745956	TN
+//////////
+
+///////////////////////////////////////////////////////////////////////////////////
