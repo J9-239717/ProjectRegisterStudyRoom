@@ -40,7 +40,7 @@ void Show_byDetail(List_Data* src,List_Data* p2,char detail,ID type){
                     printf("You have the save subject is:\n");
                     while (curr2)
                     {
-                        show_one_two_topic_by_id(curr2->data,MaHP,Ten_HP_ENG);
+                        show_one_two_topic_by_id(curr2->data,type,Ten_HP_ENG);
                         printf("Enter to continue...");getchar();
                         curr2 = curr2->next;
                     }
@@ -63,6 +63,7 @@ void Show_SAME(List_Data* p1,List_Data* p2,typecompare_flag f){
    case FLAG_ID:Show_byDetail(p1,p2,detail,MaHP);break;
    case FLAG_TIME:printf("Comming Soon\n");break;
    case FLAG_SUBJECT:Show_byDetail(p1,p2,detail,Ten_HP_ENG);break;
+   case FLAG_IDROOM: Show_byDetail(p1,p2,detail,MaLop);break;
    default:break;
    }
 }
@@ -85,7 +86,8 @@ void PayLoad(const char* person1, const char* person2){
             "1.ID of Subject\n"
             "2.Time\n"
             "3.Name of Subject\n"
-            "4.Get File ID of Room for register in web university\n"
+            "4.ID of Studie room\n"
+            "5.Get File ID of Room for register in web university\n"
             "0.for end program\n"
             "please enter 1-4 to selection: ");
         if (scanf("%d", &command) != 1) {
@@ -96,14 +98,15 @@ void PayLoad(const char* person1, const char* person2){
 
         while (getchar() != '\n');  // Clear any leftover newline characters
 
-        if (command < 0 || command > 4) {
+        if (command < 0 || command > 5) {
             printf("Please Enter again to correct command\n");
         } else {
             switch (command) {
                 case 1: Show_SAME(p1, p2, FLAG_ID); break;
                 case 2: Show_SAME(p1, p2, FLAG_TIME); break;
                 case 3: Show_SAME(p1, p2, FLAG_SUBJECT); break;
-                case 4: write_txt(person1, person2, p1, p2); break;
+                case 4: Show_SAME(p1,p2, FLAG_IDROOM);break;
+                case 5: write_txt(person1, person2, p1, p2); break;
                 default: break;
             }
         }
