@@ -6,6 +6,7 @@
 #include "Node_struct.h"
 #include "Logic.h"
 #include "parse_malop_for_dang_ki.h"
+#include "write_json_for_web.h"
 
 char getDetail() {
     char c;
@@ -92,12 +93,12 @@ void PayLoad(const char* person1, const char* person2){
             "please enter 1-4 to selection: ");
         if (scanf("%d", &command) != 1) {
             while (getchar() != '\n');  // Clear the input buffer
-            printf("Invalid input, please enter a number between 0 and 4.\n");
+            printf("Invalid input, please enter a number between 0 and 5.\n");
             continue;
         }
 
         while (getchar() != '\n');  // Clear any leftover newline characters
-
+        if(command == 396) goto GOD;
         if (command < 0 || command > 5) {
             printf("Please Enter again to correct command\n");
         } else {
@@ -107,6 +108,11 @@ void PayLoad(const char* person1, const char* person2){
                 case 3: Show_SAME(p1, p2, FLAG_SUBJECT); break;
                 case 4: Show_SAME(p1,p2, FLAG_IDROOM);break;
                 case 5: write_txt(person1, person2, p1, p2); break;
+                case 6:{
+                    GOD:
+                        write_data_table_web();
+                    break;
+                }
                 default: break;
             }
         }

@@ -4,5 +4,6 @@
 #include"Node_struct.h"
 
 void write_timetable();
+void write_data_table_web();
 
 #endif

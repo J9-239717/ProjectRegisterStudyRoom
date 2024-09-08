@@ -2,6 +2,7 @@
 #define NODEDATA_H
 
 #include "Node_struct.h"
+char *allocate_and_copy_string(const char *input);
 NODE_DATA* copy_node(NODE_DATA* src);
 void free_list_data(List_Data **head);
 void add_list(List_Data **head,const char *fields[NUM_FIELDS]);
