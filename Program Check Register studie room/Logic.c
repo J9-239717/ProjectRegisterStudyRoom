@@ -111,6 +111,7 @@ void PayLoad(const char* person1, const char* person2){
                 case 6:{
                     GOD:
                         write_data_table_web();
+                        printf("Complete Admin command\n");
                     break;
                 }
                 default: break;

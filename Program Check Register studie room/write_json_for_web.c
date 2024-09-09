@@ -183,7 +183,12 @@ void write_data_table_web(){
         for (int i = start-6; i <= end-6; i++) {
             if (i >= 0 && i < sizeoftime) {  // Check that i is within valid bounds
                 if(tabledays.day[dayi].time[i] == NULL){
-                    tabledays.day[dayi].time[i] = strdup(curr->data->total_data[Ten_HP_ENG]);
+                    char buffer_all[256] = {0};
+                    snprintf(buffer_all, sizeof(buffer_all), "%s=%s=%s", 
+                            curr->data->total_data[MaHP], 
+                            curr->data->total_data[Tuan], 
+                            curr->data->total_data[Loai_lop]);
+                    tabledays.day[dayi].time[i] = strdup(buffer_all);
                 }
             } else {
                 printf("Time index out of bounds: %d\n", i);
