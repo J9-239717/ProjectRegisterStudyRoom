@@ -184,10 +184,11 @@ void write_data_table_web(){
             if (i >= 0 && i < sizeoftime) {  // Check that i is within valid bounds
                 if(tabledays.day[dayi].time[i] == NULL){
                     char buffer_all[256] = {0};
-                    snprintf(buffer_all, sizeof(buffer_all), "%s=%s=%s", 
+                    snprintf(buffer_all, sizeof(buffer_all), "%s=%s=%s=%s", 
                             curr->data->total_data[MaHP], 
                             curr->data->total_data[Tuan], 
-                            curr->data->total_data[Loai_lop]);
+                            curr->data->total_data[Loai_lop],
+                            curr->data->total_data[Thoi_gain]);
                     tabledays.day[dayi].time[i] = strdup(buffer_all);
                 }
             } else {
@@ -198,7 +199,7 @@ void write_data_table_web(){
         curr = curr->next;
     }
     set_emtry(&tabledays);
-    for (int i = 0; i < sizeindexday; i++)
+    for (int i = 0; i < Sun; i++)
     {
         fprintf(fp,"        {\n");
         fprintf(fp,"            \"name\": \"%s\",\n", get_day_int(i+2));
@@ -213,7 +214,7 @@ void write_data_table_web(){
             }
         }
         fprintf(fp,"        }");
-        if(i+1 == sizeindexday){
+        if(i+1 == Sun){
             fprintf(fp,"\n");
         }else{
             fprintf(fp,",\n");
