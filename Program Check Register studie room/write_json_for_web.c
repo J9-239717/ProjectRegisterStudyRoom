@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include "write_json_for_web.h"
 #include "Node_storage_data.h"
-#include<string.h>
+#include <string.h>
+#include <assert.h>
 
 typedef enum{
     Mon,

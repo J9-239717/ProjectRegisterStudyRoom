@@ -89,6 +89,8 @@ void PayLoad(const char* person1, const char* person2){
             "3.Name of Subject\n"
             "4.ID of Studie room\n"
             "5.Get File ID of Room for register in web university\n"
+            "6.Write data to web\n"
+            "7.Write data to web timetable(Not Using)\n"
             "0.for end program\n"
             "please enter 1-4 to selection: ");
         if (scanf("%d", &command) != 1) {
@@ -98,8 +100,7 @@ void PayLoad(const char* person1, const char* person2){
         }
 
         while (getchar() != '\n');  // Clear any leftover newline characters
-        if(command == 396) goto GOD;
-        if (command < 0 || command > 5) {
+        if (command < 0 || command > 7) {
             printf("Please Enter again to correct command\n");
         } else {
             switch (command) {
@@ -108,12 +109,8 @@ void PayLoad(const char* person1, const char* person2){
                 case 3: Show_SAME(p1, p2, FLAG_SUBJECT); break;
                 case 4: Show_SAME(p1,p2, FLAG_IDROOM);break;
                 case 5: write_txt(person1, person2, p1, p2); break;
-                case 6:{
-                    GOD:
-                        write_data_table_web();
-                        printf("Complete Admin command\n");
-                    break;
-                }
+                case 6: write_data_table_web();break;
+                case 7: write_timetable();break;
                 default: break;
             }
         }
